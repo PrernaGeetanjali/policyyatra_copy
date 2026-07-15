@@ -2912,21 +2912,23 @@
     display: flex;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    padding: 0px 24px 80px;
+    overflow: visible;
+    padding: clamp(40px, 5vw, 72px) 24px 80px;
     box-sizing: border-box;
     background: #f6f6f6;
     flex-shrink: 0;
     text-align: left;
     font-family: Sansation, sans-serif;
   }
-  .partner-deco-ring {
+  .partnering-benefits .shape-icon {
     position: absolute;
-    top: -40px;
-    right: -60px;
-    width: min(355px, 45vw);
+    top: clamp(-24px, -1.5vw, 0);
+    right: clamp(-80px, -5vw, -24px);
+    width: min(250px, 42vw);
     height: auto;
-    opacity: 0.9;
+    margin: 0;
+    bottom: auto;
+    object-fit: contain;
     pointer-events: none;
     z-index: 0;
   }
@@ -2956,7 +2958,7 @@
     margin: 0;
     position: relative;
     font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.1;
+    line-height: 1.15;
     font-weight: 700;
     font-family: inherit;
     color: #003b88;
@@ -2971,12 +2973,13 @@
   .partner-title-underline {
     position: absolute;
     left: 0;
-    bottom: -0.12em;
-    width: 100%;
+    right: 0;
+    bottom: -0.08em;
+    width: 81%;
     height: auto;
     display: block;
     pointer-events: none;
-  }
+}
   .partner-bento {
     display: grid;
     grid-template-columns: 1.45fr 1fr;
@@ -2994,11 +2997,9 @@
     grid-column: 1;
     grid-row: 1;
     min-height: 300px;
-    padding: 36px 32px 40px;
+    padding: 0;
     color: #fff;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    background: #003b88;
   }
   .partner-card__bg {
     position: absolute;
@@ -3006,24 +3007,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left center;
     z-index: 0;
-  }
-  .partner-card__shape {
-    position: absolute;
-    left: -20px;
-    bottom: 0;
-    width: min(55%, 320px);
-    height: auto;
-    object-fit: contain;
-    opacity: 0.85;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .partner-card--featured .partner-card__content {
-    position: relative;
-    z-index: 2;
-    max-width: 340px;
-    margin-left: auto;
   }
   .partner-card__title {
     margin: 0 0 16px;
@@ -3053,12 +3038,7 @@
     z-index: 2;
   }
   .shape-icon {
-    width: 402.2px;
-    height: 313.2px;
-    right: -108.2px;
-    bottom: 6974.8px;
     object-fit: contain;
-    z-index: 1;
   }
   .partner-card--light {
     background: #deecff;
@@ -8066,14 +8046,7 @@
 
   /* Legacy eligibility absolute overrides removed */
 
-  .shape-icon {
-    width: 429.2px;
-    height: 385.2px;
-    right: -108.2px;
-    bottom: 7655.8px;
-    object-fit: contain;
-    z-index: 1;
-  }
+  /* .shape-icon position owned by .partnering-benefits .shape-icon */
 
   /* .vec-icon13 absolute override removed — fluid rule owns it */
   .div3 {
