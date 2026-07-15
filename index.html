@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./home.css" />
+  <link rel="stylesheet" href="./forms/auth-forms.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" />
+
+  <style>
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-300-normal.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-300-normal.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-300-normal.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-300-normal.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-300-normal.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-400-normal.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-400-normal.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-400-normal.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-400-normal.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-400-normal.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-500-normal.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-500-normal.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-500-normal.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-500-normal.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-500-normal.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-700-normal.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-700-normal.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-700-normal.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-700-normal.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-700-normal.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-900-normal.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-900-normal.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-900-normal.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-900-normal.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-900-normal.woff2") format("woff2");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-400-italic.woff2") format("woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      unicode-range:
+        U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+        U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+        U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/latin-ext-400-italic.woff2") format("woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      unicode-range:
+        U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+        U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/korean-400-italic.woff2") format("woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      unicode-range:
+        U+AC00-D7AF, U+1100-11FF, U+3130-318F, U+A960-A97F, U+D7B0-D7FF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/japanese-400-italic.woff2") format("woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      unicode-range:
+        U+3000-303F, U+3040-309F, U+30A0-30FF, U+FF00-FFEF, U+4E00-9FAF;
+    }
+
+    @font-face {
+      font-family: "Satoshi";
+      src: url("https://cdn.jsdelivr.net/fontsource/fonts/satoshi@latest/chinese-simplified-400-italic.woff2") format("woff2");
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      unicode-range: U+4E00-9FFF, U+3400-4DBF;
+    }
+  </style>
+</head>
+
+<body class="is-loading">
+  <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading Policy Yatra">
+    <div class="page-loader__stage">
+      <div class="page-loader__monogram" aria-hidden="true">
+        <svg class="page-loader__monogram-svg" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="monogram-part monogram-part--left" fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.963361 2.08997C-0.0595575 2.86884 -0.307638 4.37933 0.411465 5.44819L6.22177 14.0842L8.28719 8.79837L4.12875 2.61754C3.40965 1.54899 1.98535 1.31141 0.963258 2.08997H0.963361ZM6.66797 14.7472L9.38768 18.7891L11.4534 13.504L8.7341 9.46263L6.66786 14.7472H6.66797Z"
+            fill="white" />
+          <path class="monogram-part monogram-part--right" fill-rule="evenodd" clip-rule="evenodd"
+            d="M14.2193 0.923833L14.2196 0.923936C15.3869 1.46017 15.9582 2.8804 15.4894 4.08037L9.56482 19.2438C9.09596 20.444 7.75769 20.9867 6.59043 20.4504L6.59012 20.4503C5.42287 19.914 4.8515 18.4939 5.32036 17.2938L11.2449 2.13041C11.7138 0.930228 13.0521 0.387495 14.2193 0.923833Z"
+            fill="#84BD54" />
+          <path class="monogram-part monogram-part--dot" fill-rule="evenodd" clip-rule="evenodd"
+            d="M7.76458 1.52588e-05C8.70446 1.52588e-05 9.46612 0.762793 9.46612 1.70383C9.46612 2.64498 8.70436 3.40765 7.76458 3.40765C6.8247 3.40765 6.06305 2.64487 6.06305 1.70383C6.06305 0.76269 6.8248 1.52588e-05 7.76458 1.52588e-05Z"
+            fill="#84BD54" />
+        </svg>
+      </div>
+
+      <div class="page-loader__full-logo">
+        <div class="page-loader__brand">
+          <img class="page-loader__policy" alt="" src="./public/Policy.svg" />
+          <div class="page-loader__wordmark">
+            <img class="page-loader__arta" alt="" src="./public/ARTA.svg" />
+            <img class="page-loader__y" alt="" src="./public/Y.svg" />
+          </div>
+        </div>
+        <div class="page-loader__tagline-wrap">
+          <img class="page-loader__tagline" alt="Your Policy Yatra starts here" src="./public/Tagline.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home">
+    <img class="vec-icon" alt="" src="./public/Vec.svg" />
+
+    <div class="home-inner">
+      <div class="brand-details-parent">
+        <div class="brand-details">
+          <img class="policy-icon" alt="" src="./public/Policy.svg" />
+
+          <div class="wordmark-elements">
+            <img class="arta-icon" alt="" src="./public/ARTA.svg" />
+
+            <img class="y-icon" alt="" src="./public/Y.svg" />
+          </div>
+        </div>
+        <img class="tagline-icon" alt="" src="./public/Tagline.svg" />
+      </div>
+    </div>
+    <img class="vec-icon2" loading="lazy" alt="" src="./public/Vec.svg" />
+
+    <!-- path-icon moved under products section -->
+
+    <section class="hero-section-parent">
+      <div class="hero-section">
+        <div class="bg-elements">
+          <div class="header-container">
+            <div class="bg"></div>
+            <div class="anim-star">
+              <img class="images-icon" loading="lazy" alt="" src="./public/Images.svg" />
+            </div>
+            <img class="character-icon" alt="" src="./public/Character5@2x.png" />
+            <header class="header">
+              <div class="logo-wrapper">
+                <div class="header-logo">
+                  <div class="brand-details">
+                    <div class="wordmark-elements">
+                      <img class="arta-icon" alt="" src="./public/footerlogo.png" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-nav">
+                <nav class="nav-links" aria-label="Main navigation">
+                  <a href="#" class="nav-item">Home</a>
+                  <a href="#" class="nav-item nav-item--dropdown">
+                    Insurance POSP
+                    <img class="nav-chevron" alt="" src="./public/Path-43.svg" />
+                  </a>
+                  <a href="#" class="nav-item nav-item--dropdown">
+                    POSP Training & Certification
+                    <img class="nav-chevron" alt="" src="./public/Path-43.svg" />
+                  </a>
+                  <a href="#" class="nav-item nav-item--dropdown">
+                    How to become An Agent
+                    <img class="nav-chevron" alt="" src="./public/Path-43.svg" />
+                  </a>
+                  <a href="#" class="nav-item">Blog</a>
+                </nav>
+                <button class="sign-up" type="button" data-auth-show="signup" aria-controls="heroAuthMount">
+                  <span class="signup">Signup</span>
+                  <span class="sign-up-arrow">
+                    <img class="cta-icon" alt="" src="./public/CTA1.svg" />
+                  </span>
+                </button>
+              </div>
+            </header>
+            <div class="header-container-inner">
+              <div class="frame-parent">
+                <section class="graphic-title-elements-wrapper">
+                  <div class="graphic-title-elements">
+                    <div class="visuals-wrapper">
+                      <!-- <div class="rectangle-group">
+                          <div class="frame-item"></div>
+                          <div class="frame-inner"></div>
+                          <div class="rectangle-div"></div>
+                          <div class="frame-child2"></div>
+                          <div class="frame-child3"></div>
+                          <div class="frame-child4"></div>
+                        </div> -->
+                      <img class="all-shape-icon" alt="" src="./public/All-Shape.svg" />
+                    </div>
+                    <div class="scribble-hero-section">
+                      <div class="vec-wrapper">
+                        <img class="vec-icon3" loading="lazy" alt="" src="./public/Vec1.svg" />
+                      </div>
+                    </div>
+                    <h1 class="empower-your-future-container">
+                      <span class="empower-your-future">Empower Your Future as a
+                      </span>
+                      <b class="empower-your-future">POSP Agent</b>
+                    </h1>
+                  </div>
+                </section>
+                <section class="user-interaction-block">
+                  <div class="auth-form-area">
+                    <div class="hero-default-cta" id="heroDefaultCta">
+                      <div class="login-or-register">
+                        Login or Register<br />
+                      </div>
+                      <div class="input">
+                        <input class="mobile-number-input" placeholder="Enter Your Mobile Number" type="tel"
+                          inputmode="numeric" />
+                        <button class="start-earning-button" type="button">
+                          <div class="rec2"></div>
+                          <img class="shine-icon" alt="" src="./public/Shine.svg" />
+                          <span class="start-earning-now">Start Earning Now</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="hero-auth-mount" id="heroAuthMount" hidden></div>
+                  </div>
+                  <div class="frame-group">
+                    <div class="happy-customers-already-joined-wrapper">
+                      <div class="happy-customers-already">
+                        21,00,000+ Happy Customers Already Joined
+                      </div>
+                    </div>
+                    <img class="status-indicator-icon" alt="" src="./public/Status-Indicator.svg" />
+                  </div>
+                </section>
+                <section class="feature-list-block">
+                  <div class="feature-cards-list">
+                    <div class="hf-1">
+                      <div class="f-1">
+                        <div class="rec3"></div>
+                        <div class="rec4"></div>
+                        <div class="regular-payout-wrapper">
+                          <div class="regular-payout">
+                            Regular<br />Payout
+                          </div>
+                        </div>
+                        <img class="ico-icon" alt="" src="./public/Ico.svg" />
+                      </div>
+                    </div>
+                    <div class="hf-1">
+                      <div class="f-2">
+                        <div class="rec3"></div>
+                        <div class="rec4"></div>
+                        <div class="zero-investment-wrapper">
+                          <div class="zero-investment">Zero Investment</div>
+                        </div>
+                        <img class="ico-icon2" alt="" src="./public/Ico14.svg" />
+                      </div>
+                    </div>
+                    <div class="hf-1">
+                      <div class="f-3">
+                        <div class="rec3"></div>
+                        <div class="rec4"></div>
+                        <div class="insurer-partners-wrapper">
+                          <div class="insurer-partners">
+                            50+ Insurer Partners
+                          </div>
+                        </div>
+                        <img class="ico-icon3" alt="" src="./public/Ico1.svg" />
+                      </div>
+                    </div>
+                    <div class="hf-1">
+                      <div class="f-4">
+                        <div class="rec3"></div>
+                        <div class="rec4"></div>
+                        <div class="dedicated-dual-rm-support-wrapper">
+                          <div class="dedicated-dual-rm">
+                            Dedicated Dual RM Support
+                          </div>
+                        </div>
+                        <img class="ico-icon4" alt="" src="./public/Ico2.svg" />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="frame-container">
+        <div class="gradient-parent">
+          <div class="gradient"></div>
+          <!-- <div class="bar"></div> -->
+        </div>
+        <h1 class="benefits-of-becoming-container">
+          <b class="benefits-of-becoming">Benefits of Becoming POSP</b>
+          <span class="benefits-of-becoming"> Insurance Agent</span>
+        </h1>
+      </section>
+      <div class="benefit-visuals-block">
+        <div class="visuals-grid">
+          <section class="benefit-image-row">
+            <div class="image-row-items">
+              <img class="image-icon" alt="" src="./public/Image.svg" />
+
+              <img class="placeholder-empty-icon" loading="lazy" alt="" src="./public/Placeholder-Empty@2x.png" />
+            </div>
+            <div class="image-row-items">
+              <img class="image-icon" alt="" src="./public/Image.svg" />
+
+              <img class="icon" loading="lazy" alt="" src="./public/21@2x.png" />
+            </div>
+            <div class="image-row-items">
+              <img class="image-icon" alt="" src="./public/Image.svg" />
+
+              <img class="icon2" alt="" src="./public/31@2x.png" />
+            </div>
+            <div class="image-row-items">
+              <img class="image-icon" alt="" src="./public/Image.svg" />
+
+              <img class="icon3" loading="lazy" alt="" src="./public/4@2x.png" />
+            </div>
+          </section>
+          <div class="benefit-descriptions">
+            <div class="training-support-expert-guidan-container">
+              <span class="training-support">Training Support<br /></span>
+              <span class="expert-guidance-for">Expert guidance for success<br /></span>
+            </div>
+            <div class="description-pair">
+              <div class="instant-policies-quick-and-container">
+                <span class="training-support">Instant Policies<br /></span>
+                <span class="expert-guidance-for">Quick and hassle-free issuance<br /><br /></span>
+              </div>
+            </div>
+            <div class="description-pair2">
+              <div class="dedicated-rm-container">
+                <span class="training-support">Dedicated RM & TELE RM<br /></span>
+                <span class="expert-guidance-for">Get Personalized support anytime<br /><br /></span>
+              </div>
+              <div class="dedicated-rm-container">
+                <span class="training-support">Timely Payouts<br /></span>
+                <span class="expert-guidance-for">Guaranteed earnings without delays<br /><br /></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <div class="your-success-is">
+      Your success is our mission. As business advisors, we offer expert
+      guidance, unlocking your potential for growth and profitability.
+    </div>
+
+     <section class="home-child">
+      <div class="product-display-area-parent">
+        <section class="product-display-area">
+          <h1 class="what-you-can-container">
+            <b class="benefits-of-becoming">What you can sell as</b>
+            <span class="benefits-of-becoming">Policyyatra Insurance POSP Agent?</span>
+            <img class="vec-icon4" alt="" src="./public/Vec.svg" />
+          </h1>
+          <div class="product-type-grid">
+            <div class="product-categories">
+              <button class="first-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="first-product-row-inner">
+                  <div class="rec-parent">
+                    <div class="rec12"></div>
+                    <img class="ico-icon5" alt="" src="./public/Ico3.svg" />
+                  </div>
+                </div>
+                <div class="health-insurance-wrapper">
+                  <div class="health-insurance">
+                    <span class="health">Health<br /></span>
+                    <span class="insurance">Insurance</span>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+              <button class="second-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="additional-product-details">
+                  <div class="more-icons-container">
+                    <div class="rec12"></div>
+                    <img class="ico-icon6" alt="" src="./public/Ico4.svg" />
+                  </div>
+                  <div class="car-insurance-wrapper">
+                    <div class="health-insurance">
+                      <span class="health">Car<br /></span>
+                      <span class="insurance">Insurance</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+            </div>
+            <div class="product-categories">
+              <button class="first-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="inner">
+                  <div class="rec-group">
+                    <div class="rec12"></div>
+                    <img class="ico-icon7" alt="" src="./public/Ico7.svg" />
+                  </div>
+                </div>
+                <div class="health-insurance-wrapper">
+                  <div class="health-insurance">
+                    <span class="health">Two Wheeler<br /></span>
+                    <span class="insurance">Insurance</span>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+              <button class="second-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="additional-product-details">
+                  <div class="rec-container">
+                    <div class="rec12"></div>
+                    <img class="ico-icon8" alt="" src="./public/Ico5.svg" />
+                  </div>
+                  <div class="car-insurance-wrapper">
+                    <div class="health-insurance">
+                      <span class="health">Life<br /></span>
+                      <span class="insurance">Insurance</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+            </div>
+            <div class="product-categories">
+              <button class="first-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="inner">
+                  <div class="rec-group">
+                    <div class="rec12"></div>
+                    <img class="ico-icon7" alt="" src="./public/Ico6.svg" />
+                  </div>
+                </div>
+                <div class="health-insurance-wrapper">
+                  <div class="health-insurance">
+                    <span class="health">Travel<br /></span>
+                    <span class="insurance">Insurance</span>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+              <button class="second-product-row" type="button">
+                <div class="rec11"></div>
+                <div class="additional-product-details">
+                  <div class="rec-container">
+                    <div class="rec12"></div>
+                    <img class="ico-icon8" alt="" src="./public/Ico31.svg" />
+                  </div>
+                  <div class="car-insurance-wrapper">
+                    <div class="health-insurance">
+                      <span class="health">Marine<br /></span>
+                      <span class="insurance">Insurance</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="first-product-row-child">
+                  <img class="arrow-icon" alt="" src="./public/arrow-right.png" />
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="bg-parent">
+          <img class="character-icon2" loading="lazy" alt="" src="./public/hero-2.jpg" />
+        </section>
+      </div>
+
+      <svg class="path-icon" viewBox="0 0 1904 349" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="path-yatra-gradient" x1="603.271" y1="172.2" x2="1397.77" y2="172.2"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0F51A8" />
+            <stop offset="0.442308" stop-color="#028A5F" />
+            <stop offset="1" stop-color="#4EAB00" />
+          </linearGradient>
+          <path id="path-yatra-curve"
+            d="M23.2706 329.45C90.9372 246.284 368.371 113.55 936.771 247.95C1505.17 382.35 1800.94 148.617 1877.77 14.9504" />
+        </defs>
+        <path
+          d="M23.2706 329.45C90.9372 246.284 368.371 113.55 936.771 247.95C1505.17 382.35 1800.94 148.617 1877.77 14.9504"
+          stroke="url(#path-yatra-gradient)" stroke-width="60" stroke-linecap="round" />
+        <text class="path-icon__label">
+          <textPath class="path-icon__text-path" href="#path-yatra-curve" startOffset="0"></textPath>
+        </text>
+      </svg>
+    </section>
+     <section class="frame-section">
+      <div class="frame-parent3">
+        <div class="frame-wrapper">
+          <div class="frame-parent4">
+            <section class="image-parent">
+              <div class="image">
+                <div class="image-child"></div>
+                <div class="image-item"></div>
+              </div>
+              <div class="character-parent">
+                <img class="character-icon3" alt="" src="./public/Character4@2x.png" />
+
+                <div class="list-1">
+                  <div class="list-1-child"></div>
+                  <div class="icon-wrapper">
+                    <img class="icon4" alt="" src="./public/Icon.svg" />
+                  </div>
+                  <div class="amazing-communicatio">Timely Payouts</div>
+                </div>
+                <div class="list-2">
+                  <div class="list-2-child"></div>
+                  <div class="icon-wrapper">
+                    <img class="icon4" alt="" src="./public/Icon.svg" />
+                  </div>
+                  <div class="amazing-communicatio">Training Support</div>
+                </div>
+                <div class="list-3">
+                  <div class="list-3-child"></div>
+                  <div class="icon-wrapper">
+                    <img class="icon4" alt="" src="./public/Icon.svg" />
+                  </div>
+                  <div class="amazing-communicatio3">
+                    Dedicated RM & TELE RM
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="frame-wrapper2">
+              <div class="frame-parent5">
+                <div class="overview-parent">
+                  <div class="overview">Overview</div>
+                  <div class="what-is-posp-in-insurance-poi-wrapper">
+                    <h1 class="what-is-posp-container">
+                      <span>
+                        <b class="benefits-of-becoming">What is POSP in Insurance
+                        </b>
+                        <span class="benefits-of-becoming">(Point Of Sales Person)?</span>
+                      </span>
+                    </h1>
+                  </div>
+                  <div class="the-insurance-regulatory-container">
+                    <span class="the-insurance-regulatory">The Insurance Regulatory and Development Authority of
+                      India (IRDAI) oversees and regulates the insurance
+                      sector in India. To make insurance more accessible,
+                    </span>
+                    <b class="the-insurance-regulatory">IRDAI introduced the POSP (Point of Sales
+                      Person) initiative, allowing individuals to sell
+                      insurance after obtaining certification.<br /></b>
+                    <span class="the-insurance-regulatory"><br />The full form of POSP is “Point Of Sales
+                      Person”. </span>
+                    <b class="the-insurance-regulatory">A POSP insurance agent is a certified professional,
+                      licensed by IRDAI who helps people buy insurance from
+                      companies.
+                    </b>
+                    <span class="the-insurance-regulatory">They act as a bridge between customers and insurance
+                      companies who explain different policies and help people
+                      choose the right insurance plan for their needs. They
+                      also answer customer questions and provide guidance on
+                      policy benefits.</span>
+                  </div>
+                </div>
+                <button class="cta">
+                  <div class="rec23"></div>
+                  <div class="join-now-wrapper">
+                    <div class="join-now">JOIN NOW</div>
+                  </div>
+                  <div class="button-visual">
+                    <div class="rec24"></div>
+                    <img class="cta-icon2" alt="" src="./public/CTA1.svg" />
+                  </div>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="section-5">
+          <div class="rec25"></div>
+
+          <img class="vec-icon5" loading="lazy" alt="" src="./public/Vec.svg" />
+
+          <div class="advantages-of-becoming-insuran-wrapper">
+            <h1 class="advantages-of-becoming-container">
+              <b class="benefits-of-becoming">Advantages of Becoming Insurance POSP
+              </b>
+              <span class="benefits-of-becoming">Agent With Policyyatra<br /></span>
+            </h1>
+          </div>
+          <div class="frame-parent6">
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="Be Your Own Leader"
+                    src="./public/advantage01.png" />
+                </div>
+              </div>
+              <div class="card2">
+                <div class="rec27"></div>
+                <div class="you-work-as-per-your-needs-and-wrapper">
+                  <div class="you-work-as">
+                    You work as per your needs and convenience by becoming
+                    your own boss. Set your own goals, and enjoy a
+                    pressure-free job with no strict targets.<br />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="More Opportunities"
+                    src="./public/advantage02.png" />
+                </div>
+              </div>
+              <div class="card2">
+                <div class="rec27"></div>
+                <div class="you-work-as-per-your-needs-and-wrapper">
+                  <div class="offer-life-health">
+                    Offer life, health, motor, travel, and other insurance
+                    products. Help customers choose the right coverage while
+                    growing your business.
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="Work on Your Schedule"
+                    src="./public/advantage03.png" />
+                </div>
+              </div>
+              <div class="card2">
+                <div class="rec27"></div>
+                <div class="you-work-as-per-your-needs-and-wrapper">
+                  <div class="offer-life-health">
+                    Choose when and how you work. Whether part-time or
+                    full-time, enjoy the freedom to create a schedule that
+                    suits your lifestyle.
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="Start at Zero Cost"
+                    src="./public/advantage04.png" />
+                </div>
+              </div>
+              <div class="card8">
+                <div class="rec27"></div>
+                <div class="start-your-insurance-career-wi-wrapper">
+                  <div class="offer-life-health">
+                    Start your insurance career with zero upfront investment.
+                    Earn attractive commissions and build a rewarding income
+                    from day one.
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="Work Without Boundaries"
+                    src="./public/advantage05.png" />
+                </div>
+              </div>
+              <div class="card2">
+                <div class="rec27"></div>
+                <div class="start-your-insurance-career-wi-wrapper">
+                  <div class="offer-life-health">
+                    Connect with customers from home or on the go. Manage your
+                    business online using digital tools, apps, and easy policy
+                    processes.
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card-parent">
+              <div class="card">
+                <div class="frame-parent7">
+                  <img class="advantage-card-img" loading="lazy" alt="Earn Without Limits"
+                    src="./public/advantage06.png" />
+                </div>
+              </div>
+              <div class="card2">
+                <div class="rec27"></div>
+                <div class="start-your-insurance-career-wi-wrapper">
+                  <div class="offer-life-health">
+                    There are no income limits. The more policies you sell and
+                    the more customers you serve, the higher your earning
+                    potential.
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <img class="left-icon" alt="" src="./public/Left@2x.png" />
+
+    <section class="home-inner2">
+      <div class="frame-parent13">
+        <div class="who-can-mobile-scroll" aria-label="Who can become an Insurance POSP Agent">
+          <img class="who-can-mobile-scroll__img" src="./public/posp.png" alt="Who can become an Insurance POSP Agent"
+            loading="lazy" />
+        </div>
+        <section class="frame-wrapper3">
+          <div class="vec-parent">
+            <img class="vec-icon6" loading="lazy" alt="" src="./public/Vec.svg" />
+
+            <h1 class="who-can-become-container">
+              <span class="who-can-become-container2">
+                <b class="benefits-of-becoming">Who Can Become an </b>
+                <span class="benefits-of-becoming">Insurance POSP Agent?</span>
+              </span>
+            </h1>
+          </div>
+        </section>
+        <section class="frame-parent14">
+          <div class="frame-wrapper4">
+            <div class="frame-parent15">
+              <div class="anyone-with-good-communication-wrapper">
+                <div class="anyone-with-good">
+                  Anyone with good communication skills and a passion for
+                  helping people can become a POSP Insurance Agent! Simply
+                  register with Square Insurance, complete the training, and
+                  pass the IRDAI certification test to start your journey. Be
+                  your own boss and build a rewarding career today!
+                </div>
+              </div>
+              <img class="vector-icon" alt="" src="./public/Vector.svg" />
+            </div>
+          </div>
+          <div class="frame-parent16">
+            <div class="frame-parent17">
+              <div class="vector-wrapper">
+                <img class="vector-icon" alt="" src="./public/Vector.svg" />
+              </div>
+              <div class="div">
+                <div class="vec-group">
+                  <img class="vec-icon7" alt="" src="./public/Vec2.svg" />
+
+                  <img class="img-icon" alt="" src="./public/Img@2x.png" />
+                </div>
+              </div>
+            </div>
+            <div class="div">
+              <div class="vec-container">
+                <img class="vec-icon7" alt="" src="./public/Vec2.svg" />
+
+                <img class="img-icon" alt="" src="./public/Img4@2x.png" />
+              </div>
+              <div class="parent">
+                <div class="div3">
+                  <img class="vec-icon7" alt="" src="./public/Vec2.svg" />
+
+                  <img class="img-icon" alt="" src="./public/Img1@2x.png" />
+                </div>
+                <div class="div4">
+                  <img class="vec-icon7" alt="" src="./public/Vec2.svg" />
+
+                  <img class="img-icon" alt="" src="./public/Img2@2x.png" />
+                </div>
+                <img class="bg-icon" alt="" src="./public/BG1.svg" />
+              </div>
+            </div>
+            <div class="div">
+              <div class="vec-group">
+                <img class="vec-icon7" alt="" src="./public/Vec2.svg" />
+
+                <img class="img-icon" alt="" src="./public/Img3@2x.png" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="eligibility-categories">
+          <div class="applicant-types">
+            <div class="demographics">
+              <div class="type-options">
+                <div class="rec38"></div>
+                <div class="rec39"></div>
+                <div class="students">Students</div>
+              </div>
+              <div class="type-options">
+                <div class="rec38"></div>
+                <button class="rec41"></button>
+                <div class="students">Businessman</div>
+              </div>
+              <div class="type-options">
+                <div class="rec38"></div>
+                <div class="rec39"></div>
+                <div class="students">Retired Person</div>
+              </div>
+            </div>
+            <div class="professions">
+              <div class="occupation-set">
+                <button class="button5">
+                  <div class="rec38"></div>
+                  <div class="rec39"></div>
+                  <div class="housewives">Housewives</div>
+                </button>
+                <button class="button5">
+                  <div class="rec38"></div>
+                  <div class="rec39"></div>
+                  <div class="housewives">Working Professional</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <img class="vec-icon12" alt="" src="./public/Vec.svg" /> 
+
+    <section class="why-and-how">
+      <div class="information-block">
+        <div class="eligibility-visual">
+          <img class="eligibility-character" src="./public/Left@2x.png" alt="" loading="lazy" />
+        </div>
+        <div class="why-you-should-choos-parent">
+          <h1 class="why-you-should">
+            Eligibility Requirements to become Insurance POSP Agent
+          </h1>
+          <img class="vec-icon13" alt="" src="./public/Status-Indicator.svg" />
+          <section class="eligibility-list">
+            <p class="anyone-with-good2">
+              Anyone with good communication skills and a passion for helping
+              people can become a POSP Insurance Agent! Simply register with
+              Square Insurance, complete the training, and pass the IRDAI
+              certification test to start your journey. Be your own boss and
+              build a rewarding career today!
+            </p>
+            <div class="requirement-items">
+              <div class="item-markers-parent">
+                <div class="item-markers">
+                  <b class="indicators">1</b>
+                </div>
+                <div class="condition-statements">
+                  <div class="you-must-be">You must be a resident of India.</div>
+                </div>
+              </div>
+            </div>
+            <div class="requirement-items">
+              <div class="item-markers-parent">
+                <div class="item-markers">
+                  <b class="indicators">2</b>
+                </div>
+                <div class="condition-statements">
+                  <div class="you-must-be">You must be 18 years or older.</div>
+                </div>
+              </div>
+            </div>
+            <div class="requirement-items">
+              <div class="item-markers-parent">
+                <div class="item-markers">
+                  <b class="indicators">3</b>
+                </div>
+                <div class="condition-statements">
+                  <div class="you-must-be">
+                    You should have at least a 10th-grade education
+                    (Matriculation or equivalent).
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="requirement-items">
+              <div class="item-markers-parent">
+                <div class="item-markers">
+                  <b class="indicators">4</b>
+                </div>
+                <div class="condition-statements">
+                  <div class="you-must-be">
+                    You must have an Aadhar Card and PAN Card (original
+                    documents required).
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="requirement-items">
+              <div class="item-markers-parent">
+                <div class="item-markers">
+                  <b class="indicators">5</b>
+                </div>
+                <div class="condition-statements">
+                  <div class="you-must-be">
+                    You need to have a bank account in your name.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="section-8">
+        <div class="bg3"></div>
+        <section class="heading-parent">
+          <div class="heading">
+            <div class="how-it-works">HOW IT WORKS</div>
+            <h1 class="easy-steps-to">
+              Easy Steps to become an insurance agent
+            </h1>
+            <img class="vec-icon14" loading="lazy" alt="" src="./public/Vec.svg" />
+          </div>
+          <div class="cta-wrapper">
+            <button class="cta2">
+              <div class="rec23"></div>
+              <div class="join-now-wrapper">
+                <div class="get-started">GET STARTED</div>
+              </div>
+              <div class="button-visual">
+                <div class="rec24"></div>
+                <img class="cta-icon2" alt="" src="./public/CTA1.svg" />
+              </div>
+            </button>
+          </div>
+        </section>
+        <div class="process-content">
+          <div class="video-embed">
+            <img class="vid-icon" loading="lazy" alt="" src="./public/Vid@2x.png" />
+          </div>
+          <img class="process-line-icon" loading="lazy" alt="" src="./public/Process-Line.svg" />
+
+          <div class="steps-container">
+            <section class="step-1">
+              <div class="rec55"></div>
+              <div class="step-content-layouts-parent">
+                <div class="step-content-layouts">
+                  <div class="step-headers">
+                    <b class="step-12">Step 1</b>
+                  </div>
+                  <div class="step-icons">
+                    <div class="ico-rec"></div>
+                    <img class="markers-icon" alt="" src="./public/Markers.svg" />
+                  </div>
+                </div>
+                <h2 class="account-creation">Account Creation</h2>
+              </div>
+              <div class="this-is-the">
+                This is the first step to becoming a POSP insurance Agent.
+                Visit the Square Insurance website, click on the "Become a
+                POSP" button. Fill out the required details, and create an
+                account by setting a username and password.<br />
+              </div>
+            </section>
+            <section class="step-1">
+              <div class="rec55"></div>
+              <div class="frame-parent18">
+                <div class="frame-parent19">
+                  <div class="step-headers">
+                    <b class="step-12">Step 2</b>
+                  </div>
+                  <div class="ico-rec-parent">
+                    <div class="ico-rec"></div>
+                    <img class="icon13" alt="" src="./public/23.svg" />
+                  </div>
+                </div>
+                <h2 class="kyc-document-verification">
+                  KYC Document Verification<br />
+                </h2>
+              </div>
+              <div class="this-is-the">
+                Upload copies of your KYC documents, such as your Aadhaar
+                card, and PAN card. Your documents will be verified by our
+                experts.<br />
+              </div>
+            </section>
+            <section class="step-1">
+              <div class="rec55"></div>
+              <div class="step-content-layouts-parent">
+                <div class="step-content-layouts">
+                  <div class="step-headers">
+                    <b class="step-12">Step 3</b>
+                  </div>
+                  <div class="ico-rec-group">
+                    <div class="ico-rec"></div>
+                    <img class="icon14" alt="" src="./public/32.svg" />
+                  </div>
+                </div>
+                <h2 class="account-creation">Training</h2>
+              </div>
+              <div class="this-is-the">
+                You must complete 15 hours of training from Square Insurance.
+                This training helps you understand insurance policies and
+                selling guidelines.<br />
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section class="partnering-benefits" id="become-partner">
+      <img class="shape-icon" alt="" src="./public/Shape.svg" />
+      <div class="advantages-block">
+        <div class="benefits-heading">
+          <h2 class="why-partner-with">
+            Why Partner with
+            <span class="why-partner-with__accent">
+              Policyyatra?
+              <img
+                class="partner-title-underline"
+                src="./public/Vec.svg"
+                alt=""
+              />
+            </span>
+          </h2>
+        </div>
+        <div class="partner-bento">
+          <article class="partner-card partner-card--featured">
+            <img class="partner-card__bg" src="./public/trusted.png" alt="" />
+          </article>
+          <article class="partner-card partner-card--light">
+            <img class="partner-card__illus partner-card__illus--top-right" src="./public/partner-deco-1.png" alt="" />
+            <h3 class="partner-card__title partner-card__title--dark">
+              Minimal Paperwork, Hassle-Free Process
+            </h3>
+            <p class="partner-card__text partner-card__text--dark">
+              We have developed our structure of working in a way that
+              ensures the minimum of paperwork and a hassle-free process of
+              documentation.
+            </p>
+          </article>
+          <article class="partner-card partner-card--light">
+            <img class="partner-card__illus partner-card__illus--top-right" src="./public/partner-deco-2.png" alt="" />
+            <h3 class="partner-card__title partner-card__title--dark">
+              Fastest Claim Settlement
+            </h3>
+            <p class="partner-card__text partner-card__text--dark">
+              We ensure quick and hassle-free claim processing so customers
+              get their payouts on time without unnecessary delays.
+            </p>
+          </article>
+          <article class="partner-card partner-card--light partner-card--wide">
+            <img class="partner-card__illus partner-card__illus--left" src="./public/partner-deco-3.png" alt="" />
+            <div class="partner-card__content partner-card__content--right">
+              <h3 class="partner-card__title partner-card__title--dark">
+                Expert Training &amp; Support
+              </h3>
+              <p class="partner-card__text partner-card__text--dark">
+                Our training and development team trains you for all
+                unfavorable circumstances and provides timely updates so that
+                you face a minimum of problems and enjoy a supportive
+                environment during client meetings.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> 
+    <!-- <section class="testimonial">
+        <div class="rec61"></div>
+        <img
+          class="character-icon4"
+          loading="lazy"
+          alt=""
+          src="./public/Character2@2x.png"
+        />
+
+        <div class="testimonial-header">
+          <h1 class="partner-success-stories">Partner Success Stories</h1>
+        </div>
+        <div class="bhargav-sharma">
+          <ul class="bhargav-sharma2">
+            <li class="node">Bhargav Sharma</li>
+          </ul>
+        </div>
+      </section>  -->
+    <section class="glow"></section>
+    <section class="mission-features">
+      <div class="section-10">
+        <div class="rec62"></div>
+        <div class="rec-parent11">
+          <div class="rec63"></div>
+          <div class="frame-wrapper5">
+            <div class="frame-parent22">
+              <section class="frame-parent23">
+                <div class="overview-parent">
+                  <h1 class="making-insurance-reach-container">
+                    <span class="making">Making </span>
+                    <b class="making">Insurance<br /></b>
+                    <span class="making">Reach Every </span>
+                    <span class="bharat-line-wrap">
+                      <b class="making">Corner of Bharat</b>
+                      <img class="bharat-underline" src="./public/underline-bharat.png" alt="" />
+                    </span>
+                  </h1>
+                </div>
+                <div class="why-you-should10">
+                  The leading InsurTech platform, designed exclusively to
+                  support insurance agent partners.
+                </div>
+              </section>
+              <section class="features">
+                <div class="f-12">
+                  <div class="rec64"></div>
+                  <div class="f-1-inner">
+                    <div class="rec-parent12">
+                      <div class="rec65"></div>
+                      <img class="ico-icon11" alt="" src="./public/Ico13.svg" />
+                    </div>
+                  </div>
+                  <div class="why-you-should-choos-container">
+                    <h2 class="why-you-should11">4L+</h2>
+                  </div>
+                  <div class="why-you-should-choos-frame">
+                    <div class="why-you-should12">Registered Partners</div>
+                  </div>
+                </div>
+                <div class="f-12">
+                  <div class="rec64"></div>
+                  <div class="f-1-inner">
+                    <div class="rec-parent13">
+                      <div class="rec65"></div>
+                      <img class="ico-icon12" alt="" src="./public/Ico41.svg" />
+                    </div>
+                  </div>
+                  <div class="why-you-should-choos-container">
+                    <h2 class="why-you-should11">10M+</h2>
+                  </div>
+                  <div class="why-you-should-choos-frame">
+                    <div class="why-you-should12">Policies Sold</div>
+                  </div>
+                </div>
+                <div class="f-12">
+                  <div class="rec64"></div>
+                  <div class="f-1-inner">
+                    <div class="rec-parent14">
+                      <div class="rec65"></div>
+                      <img class="ico-icon13" alt="" src="./public/Ico21.svg" />
+                    </div>
+                  </div>
+                  <div class="why-you-should-choos-container">
+                    <h2 class="why-you-should11">50+</h2>
+                  </div>
+                  <div class="why-you-should-choos-frame">
+                    <div class="why-you-should12">Insurers</div>
+                  </div>
+                </div>
+                <div class="f-12">
+                  <div class="rec64"></div>
+                  <div class="f-1-inner">
+                    <div class="rec-parent15">
+                      <div class="rec65"></div>
+                      <img class="ico-icon14" alt="" src="./public/Ico11.svg" />
+                    </div>
+                  </div>
+                  <div class="why-you-should-choos-container">
+                    <h2 class="why-you-should11">15+</h2>
+                  </div>
+                  <div class="why-you-should-choos-frame">
+                    <div class="why-you-should12">Experience Centers</div>
+                  </div>
+                </div>
+                <div class="f-12">
+                  <div class="rec64"></div>
+                  <div class="f-1-inner">
+                    <div class="rec-parent16">
+                      <div class="rec65"></div>
+                      <img class="ico-icon15" alt="" src="./public/Ico111.svg" />
+                    </div>
+                  </div>
+                  <div class="why-you-should-choos-container">
+                    <h2 class="why-you-should11">1000+</h2>
+                  </div>
+                  <div class="why-you-should-choos-frame">
+                    <div class="why-you-should12">PBP Employees</div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="mission-map-wrap">
+            <img class="map-icon" loading="lazy" alt="India map" src="./public/Map.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="partner-voices">
+      <div class="partner-voices__inner">
+        <header class="partner-voices__header">
+          <h2 class="partner-voices__title">
+            Voices of Our
+            <span class="partner-voices__accent">
+              Partners
+              <img class="partner-voices__underline" src="./public/scribble-green.png" alt="" />
+            </span>
+          </h2>
+        </header>
+
+        <div class="partner-voices__carousel">
+          <div class="swiper partner-voices__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="partner-voices__card">
+                  <div class="partner-voices__card-inner">
+                    <h3 class="partner-voices__card-title">
+                      Partner Success Stories
+                    </h3>
+                    <p class="partner-voices__card-name">Bhargav Sharma</p>
+                    <img class="partner-voices__card-img" src="./public/Character1@2x.png" alt="" loading="lazy" />
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="partner-voices__card">
+                  <div class="partner-voices__card-inner">
+                    <h3 class="partner-voices__card-title">
+                      Partner Success Stories
+                    </h3>
+                    <p class="partner-voices__card-name">Bhargav Sharma</p>
+                    <img class="partner-voices__card-img" src="./public/Character4@2x.png" alt="" loading="lazy" />
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="partner-voices__card">
+                  <div class="partner-voices__card-inner">
+                    <h3 class="partner-voices__card-title">
+                      Partner Success Stories
+                    </h3>
+                    <p class="partner-voices__card-name">Bhargav Sharma</p>
+                    <img class="partner-voices__card-img" src="./public/Character3@2x.png" alt="" loading="lazy" />
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="partner-voices__card">
+                  <div class="partner-voices__card-inner">
+                    <h3 class="partner-voices__card-title">
+                      Partner Success Stories
+                    </h3>
+                    <p class="partner-voices__card-name">Bhargav Sharma</p>
+                    <img class="partner-voices__card-img" src="./public/Character2@2x.png" alt="" loading="lazy" />
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="partner-voices__card">
+                  <div class="partner-voices__card-inner">
+                    <h3 class="partner-voices__card-title">
+                      Partner Success Stories
+                    </h3>
+                    <p class="partner-voices__card-name">Bhargav Sharma</p>
+                    <img class="partner-voices__card-img" src="./public/Character3@2x.png" alt="" loading="lazy" />
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="partner-voices__controls">
+            <div class="partner-voices__pagination swiper-pagination"></div>
+            <div class="partner-voices__arrows">
+              <button type="button" class="partner-voices__arrow partner-voices__arrow--prev"
+                aria-label="Previous slide">
+                <img src="./public/Arrow.svg" alt="" />
+              </button>
+              <button type="button" class="partner-voices__arrow partner-voices__arrow--next" aria-label="Next slide">
+                <img src="./public/Arrow.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="home-inner3">
+      <div class="frame-parent24">
+        <div class="section-13">
+          <h1 class="policyyatra-insurance-posp">
+            Policyyatra Insurance<br />POSP Mobile App
+          </h1>
+          <div class="why-you-should21">
+            Today and start issuing insurance policies on the go!
+          </div>
+          <div class="trusted-by">
+            <div class="rec78"></div>
+            <img class="icon16" alt="" src="./public/Icon1@2x.png" />
+
+            <div class="why-you-should-choos-wrapper10">
+              <div class="why-you-should-container">
+                <span>
+                  <span class="trusted-by2">Trusted by </span>
+                  <b>100K+ Customers</b>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="frame-parent28">
+            <div class="rec-parent17">
+              <div class="rec79"></div>
+              <img class="image-icon6" alt="" src="./public/rec-parent17-bg.png" />
+            </div>
+            <img class="appstore-icon" alt="" src="./public/appstore.svg" />
+
+            <img class="googleplay-icon" alt="" src="./public/googleplay.svg" />
+
+            <img class="stroke-stroke-icon" alt="" src="./public/Stroke-Stroke.svg" />
+
+            <img class="logo-1-icon" alt="" src="./public/Logo-1@2x.png" />
+
+            <img class="stroke-stroke-icon2" alt="" src="./public/Stroke-Stroke1.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-132 partners-section" aria-labelledby="partners-heading">
+      <div class="partners-section__inner">
+        <header class="partners-section__header">
+          <h2 id="partners-heading" class="our-trusted-insurance partners-section__title">
+            Our Trusted Insurance Partners
+          </h2>
+          <img class="partners-section__underline" src="./public/Vec.svg" alt="" loading="lazy" />
+        </header>
+
+        <div class="partners-cloud" aria-hidden="true">
+          <div class="partners-cloud__glow"></div>
+
+          <div class="partners-marquee">
+            <div class="partners-marquee__row partners-marquee__row--left partners-marquee__row--s1">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r1"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--right partners-marquee__row--s2">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r2"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--left partners-marquee__row--s3">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--right partners-marquee__row--s4">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r4"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r4"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--left partners-marquee__row--s5">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r5"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r5"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--right partners-marquee__row--s6">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r6"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--left partners-marquee__row--s7">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--right partners-marquee__row--s6">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r6"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r6"></div>
+                </div>
+              </div>
+            </div>
+            <div class="partners-marquee__row partners-marquee__row--left partners-marquee__row--s7">
+              <div class="partners-marquee__viewport">
+                <div class="partners-marquee__track">
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                  <div class="partners-marquee__strip partners-marquee__strip--r3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="partners-cloud__hub">
+            <img class="py-logo-icon" alt="Policyyatra" src="./public/PY-Logo.svg" />
+          </div>
+          <div class="partners-cloud__vignette"></div>
+        </div>
+
+      
+      </div>
+    </section>
+    <section class="home-inner4">
+      <div class="frame-parent29">
+        <section class="frame-parent30">
+          <div class="frame-wrapper10">
+            <div class="questions-answers-parent">
+              <h1 class="questions-answers">Questions & Answers</h1>
+              <h3 class="dont-find-the-container">
+                <span class="dont-find-the">Don’t find the answer?</span>
+                <span class="span"> </span>
+                <span class="dont-find-the">We can help</span>
+              </h3>
+            </div>
+          </div>
+          <button class="cta3">
+            <div class="rec23"></div>
+            <div class="join-now-wrapper">
+              <div class="get-started">Contact us</div>
+            </div>
+            <div class="rec-parent19">
+              <div class="rec24"></div>
+              <img class="cta-icon4" alt="" src="./public/CTA1.svg" />
+            </div>
+          </button>
+        </section>
+        <div class="faq">
+          <div class="faq-accordion" role="list">
+            <div class="faq-item" role="listitem">
+              <button class="faq-item__trigger" type="button" aria-expanded="false">
+                <span class="faq-item__question">What is the full form of POSP in insurance?</span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__answer">
+                  POSP stands for <strong>Point of Sales Person</strong>.
+                  Introduced by IRDAI, it is a certification pathway that
+                  allows individuals to sell insurance products after
+                  completing the required training and examination.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-item__trigger" type="button" aria-expanded="false">
+                <span class="faq-item__question">Who is a POSP?</span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__answer">
+                  A POSP is an IRDAI-certified insurance agent who helps
+                  customers understand, compare, and purchase insurance
+                  policies. They act as a trusted bridge between insurers and
+                  buyers by explaining coverage, answering questions, and
+                  guiding people to the right plan.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item faq-item--open" role="listitem">
+              <button class="faq-item__trigger" type="button" aria-expanded="true">
+                <span class="faq-item__question">How do you become an insurance agent?</span>
+                <span class="faq-item__icon" aria-hidden="true">−</span>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__answer">
+                  To become an insurance agent, you need to complete training
+                  and pass an exam. After that, you can start selling policies
+                  to customers.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-item__trigger" type="button" aria-expanded="false">
+                <span class="faq-item__question">What is the qualification required for an insurance
+                  agent?</span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__answer">
+                  You should have completed at least Class 10 (or the
+                  equivalent qualification prescribed by IRDAI), along with
+                  good communication skills and a willingness to help
+                  customers choose suitable insurance products.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-item__trigger" type="button" aria-expanded="false">
+                <span class="faq-item__question">What is the minimum age to become an insurance agent?</span>
+                <span class="faq-item__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__answer">
+                  The minimum age to become a POSP insurance agent in India is
+                  <strong>18 years</strong>. Candidates must also complete
+                  mandatory training and clear the IRDAI certification exam
+                  before they can start selling policies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog-content-parent">
+      <div class="benefit-visuals-block">
+        <div class="blog-header-and-list">
+          <section class="blog-intro">
+            <h2 class="our-blog">Our Blog</h2>
+            <div class="blog-list-container">
+              <div class="blog-post-and-more">
+                <div class="blog-post-item">
+                  <div class="bog-2">
+                    <div class="bg5"></div>
+                    <div class="blog-meta-content">
+                      <h3 class="trending-18-container">
+                        <span class="trending-">
+                          <b class="trending-">Trending -</b>
+                        </span>
+                        <span class="trending-">
+                          <span class="trending-"> </span>
+                          <span class="jul-20182">18 Jul 2018</span>
+                        </span>
+                      </h3>
+                      <h2 class="gold-card-user">
+                        Gold card user<br />will get priority pass<br />for
+                        Airport.
+                      </h2>
+                    </div>
+                    <div class="step-content-layouts">
+                      <div class="blog-tag-container">
+                        <button class="tag">
+                          <div class="rectangle"></div>
+                          <div class="evenet">DESIGN</div>
+                        </button>
+                      </div>
+                      <img class="cta-icon5" loading="lazy" alt="" src="./public/CTa.svg" />
+                    </div>
+                  </div>
+                  <img class="button-icon" loading="lazy" alt="" src="./public/Button.svg" />
+                </div>
+                <div class="view-all-blogs-link">
+                  <h3 class="see-all-blogs">See all blogs</h3>
+                  <img class="view-all-blogs-link-child" alt="" src="./public/Status-Indicator.svg" />
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="additional-blog-posts">
+            <div class="blog-post-grid">
+              <div class="image2">
+                <div class="image-inner"></div>
+                <div class="blog-card-content">
+                  <div class="blog-featured-info">
+                    <div class="tag2">
+                      <div class="rectangle2"></div>
+                      <div class="evenet2">DESIGN</div>
+                    </div>
+                    <h3 class="featured-18-container">
+                      <b class="trending-">Featured -</b>
+                      <span class="trending-"> 18 Jul 2018</span>
+                    </h3>
+                  </div>
+                </div>
+                <div class="vector-parent">
+                  <img class="frame-child51" loading="lazy" alt="" src="./public/Vector-1199.svg" />
+
+                  <h2 class="manage-your-online">
+                    Manage your online banking<br />and get rewarded
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <section class="image3">
+              <div class="image-child2"></div>
+              <div class="blog-content-two">
+                <div class="vector-group">
+                  <img class="frame-child52" loading="lazy" alt="" src="./public/Vector-1200.svg" />
+
+                  <h3 class="wev-9000-agents">
+                    Our Travel Card Makes<br />you Happy.
+                  </h3>
+                </div>
+              </div>
+              <div class="tag-container-two-parent">
+                <div class="blog-tag-container">
+                  <div class="tag3">
+                    <div class="rectangle"></div>
+                    <div class="evenet3">Travel</div>
+                  </div>
+                </div>
+                <img class="cta-icon6" loading="lazy" alt="" src="./public/CTa2.svg" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__inner">
+        <img
+          class="footer__star footer__star--tl"
+          src="./public/hero-sparkle.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="footer__newsletter">
+          <div class="footer__newsletter-copy">
+            <h2 class="footer__newsletter-title">Newsletter.</h2>
+            <p class="footer__newsletter-sub">
+              Get instant news by subscribe to our daily newsletter
+            </p>
+          </div>
+          <div class="footer__newsletter-form">
+            <div class="footer__email-wrap">
+              <input class="footer__email-input" type="email" placeholder="Enter your email address" />
+              <button class="footer__email-btn" type="button" aria-label="Subscribe">
+                <img src="./public/Button1.svg" alt="" />
+              </button>
+            </div>
+            <p class="footer__subscribe-note">
+              Already subscribed?
+              <a class="footer__unsubscribe" href="#">Unsubscribe</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer__divider footer__divider--dotted"></div>
+
+        <div class="footer__grid">
+          <img
+            class="footer__star footer__star--brand"
+            src="./public/footerstar.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="footer__star footer__star--mid"
+            src="./public/hero-sparkle.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <div class="footer__col footer__col--brand">
+            <img class="footer__logo" src="./public/footerlogo.png" alt="Policyyatra" loading="lazy" />
+            <p class="footer__address">
+              Dummy Address, 2190 Urban Terrace, Mirpur, Equal Licensed in
+              50 states.
+            </p>
+            <div class="footer__contact">
+              <div class="footer__contact-row">
+                <img src="./public/Iconly-Light-Outline-Message.svg" alt="" />
+                <span>policyyatra@dummy.com</span>
+              </div>
+              <div class="footer__contact-row">
+                <img src="./public/Iconly-Light-Outline-Calling.svg" alt="" />
+                <span>+91 12345 46245</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__heading">Insurance POSP</h3>
+            <ul class="footer__links">
+              <li>Who Can Become a POSP Insurance Agent?</li>
+              <li>Benefits of becoming POSP Insurance Agent</li>
+              <li>Step-by-Step Registration Process</li>
+            </ul>
+            <h3 class="footer__heading footer__heading--spaced">
+              Quick Links
+            </h3>
+            <ul class="footer__links">
+              <li>Blog</li>
+              <li>Privacy Policy</li>
+              <li>Terms of use</li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__heading">POSP Training &amp; Certification</h3>
+            <ul class="footer__links">
+              <li>Training Modules</li>
+              <li>Certification Process</li>
+              <li>Insurance POSP Agent Exam</li>
+              <li>Learning Resources</li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__heading">How to become An Agent</h3>
+            <ul class="footer__links">
+              <li>Become Motor Insurance Agent</li>
+              <li>Become LIC Insurance Agent</li>
+              <li>Become Health Insurance Agent</li>
+              <li>Become Life Insurance Agent</li>
+              <li>Become Travel Insurance Agent</li>
+              <li>Become Bajaj Insurance Agent</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__divider"></div>
+
+        <div class="footer__bar">
+          <p class="footer__copyright">Copyright @2026 Policyyatra</p>
+          <nav class="footer__legal-links">
+            <a href="#">Privacy &amp; Terms.</a>
+            <a href="#">Cookies.</a>
+            <a href="#">Contact Us</a>
+          </nav>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook">
+              <img src="./public/Icon-Graphic.svg" alt="" />
+            </a>
+            <a href="#" aria-label="Twitter">
+              <img src="./public/Icon-Graphic1.svg" alt="" />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <img src="./public/Group-47620.svg" alt="" />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <img src="./public/linkedin.svg" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <p class="footer__disclaimer">
+          Policyyatra Pvt. Ltd. | Reg. Office - 506, 5th Floor, V-Jai City
+          Point, Ahinsha Circle, C-Scheme, Jaipur (Raj.)-302001 | IRDAI Direct
+          Insurance Broker (Life &amp; General) | License No.- 606 | Valid
+          Till - 04/07/2026 (Renewable) Code No. -IRDAI/DB697/17 | CIN NO. -
+          U66000RJ2016PTC056324 | ISO 9001:2015 Reg. No. -IN118260A | IBAI
+          Membership No.-519 Standard T&amp;C Apply* For more details on risk
+          factors, terms, and conditions, please read the sales brochure
+          carefully before concluding a sale.Visitors are hereby informed
+          that their information submitted on the website may be shared with
+          insurers. Product information is authentic and solely based on the
+          information received from the insurers.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    (function () {
+      var loader = document.getElementById("page-loader");
+
+      function markPageReady() {
+        document.body.classList.add("is-page-ready");
+      }
+
+      if (!loader) {
+        markPageReady();
+        return;
+      }
+
+      var revealAt = 1100;
+      var hideAt = 3400;
+      var startedAt = Date.now();
+      var revealed = false;
+      var hidden = false;
+
+      function revealLogo() {
+        if (revealed) return;
+        revealed = true;
+        loader.classList.add("is-revealing");
+      }
+
+      function hideLoader() {
+        if (hidden) return;
+        hidden = true;
+        loader.classList.add("is-hidden");
+        document.body.classList.remove("is-loading");
+        markPageReady();
+        window.setTimeout(function () {
+          loader.remove();
+        }, 600);
+      }
+
+      window.setTimeout(revealLogo, revealAt);
+      window.setTimeout(hideLoader, hideAt);
+
+      window.addEventListener("load", function () {
+        var elapsed = Date.now() - startedAt;
+        if (elapsed < hideAt) return;
+        revealLogo();
+        window.setTimeout(hideLoader, 900);
+      });
+    })();
+
+    function initPartnerVoicesSwiper() {
+  var el = document.querySelector(".partner-voices__swiper");
+  if (!el || el.swiper || typeof Swiper === "undefined") return;
+
+  var CENTER_INDEX = 2;
+
+  var partnerSwiper = new Swiper(".partner-voices__swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    loopAdditionalSlides: 3,
+    initialSlide: CENTER_INDEX,
+    speed: 550,
+    spaceBetween: 0,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+    observer: true,
+    observeParents: true,
+    resizeObserver: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    coverflowEffect: {
+      rotate: 0,
+      stretch: -28,
+      depth: 210,
+      modifier: 2.4,
+      slideShadows: false,
+    },
+    pagination: {
+      el: ".partner-voices__pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".partner-voices__arrow--next",
+      prevEl: ".partner-voices__arrow--prev",
+    },
+    breakpoints: {
+      0: {
+        coverflowEffect: { stretch: -14, depth: 120, modifier: 1.8 },
+      },
+      825: {
+        coverflowEffect: { stretch: -28, depth: 210, modifier: 2.4 },
+      },
+    },
+    on: {
+      init: function (swiper) {
+        // First pass: snap immediately (best effort before widths settle)
+        swiper.slideToLoop(CENTER_INDEX, 0, false);
+        swiper.update();
+
+        // Second pass: after layout/paint, widths are accurate — re-center
+        requestAnimationFrame(function () {
+          swiper.update();
+          swiper.slideToLoop(CENTER_INDEX, 0, false);
+
+          if (swiper.autoplay) {
+            swiper.autoplay.start();
+          }
+        });
+      },
+    },
+  });
+
+  // Third pass: once slide images finish loading, dimensions can shift —
+  // re-center one more time so autoplay doesn't visibly "jump" on first tick.
+  var slideImages = el.querySelectorAll(".partner-voices__card-img");
+  var pending = slideImages.length;
+  if (pending) {
+    slideImages.forEach(function (img) {
+      if (img.complete) {
+        pending--;
+        return;
+      }
+      img.addEventListener(
+        "load",
+        function () {
+          pending--;
+          if (pending === 0 && partnerSwiper && !partnerSwiper.destroyed) {
+            partnerSwiper.update();
+            partnerSwiper.slideToLoop(CENTER_INDEX, 0, false);
+          }
+        },
+        { once: true }
+      );
+    });
+  }
+
+  var section = document.querySelector(".partner-voices");
+  if (section && "IntersectionObserver" in window) {
+    var voicesObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!partnerSwiper.autoplay) return;
+          if (entry.isIntersecting) {
+            partnerSwiper.update();
+            partnerSwiper.autoplay.start();
+          } else {
+            partnerSwiper.autoplay.stop();
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+    );
+    voicesObserver.observe(section);
+  }
+
+  return partnerSwiper;
+}
+    function bootPartnerVoicesSwiper() {
+      initPartnerVoicesSwiper();
+      window.setTimeout(function () {
+        var el = document.querySelector(".partner-voices__swiper");
+        if (!el || !el.swiper) return;
+        el.swiper.update();
+        if (el.swiper.autoplay) {
+          el.swiper.autoplay.start();
+        }
+      }, 400);
+    }
+
+    if (document.body.classList.contains("is-page-ready")) {
+      bootPartnerVoicesSwiper();
+    } else {
+      var pageReadyObserver = new MutationObserver(function () {
+        if (!document.body.classList.contains("is-page-ready")) return;
+        pageReadyObserver.disconnect();
+        bootPartnerVoicesSwiper();
+      });
+      pageReadyObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+
+      window.addEventListener("load", bootPartnerVoicesSwiper, { once: true });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (document.body.classList.contains("is-page-ready")) {
+        bootPartnerVoicesSwiper();
+      }
+    });
+
+    (function () {
+      var accordion = document.querySelector(".faq-accordion");
+      if (!accordion) return;
+
+      var items = accordion.querySelectorAll(".faq-item");
+
+      function closeItem(item) {
+        var trigger = item.querySelector(".faq-item__trigger");
+        var icon = item.querySelector(".faq-item__icon");
+        item.classList.remove("faq-item--open");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+        if (icon) icon.textContent = "+";
+      }
+
+      function openItem(item) {
+        var trigger = item.querySelector(".faq-item__trigger");
+        var icon = item.querySelector(".faq-item__icon");
+        item.classList.add("faq-item--open");
+        if (trigger) trigger.setAttribute("aria-expanded", "true");
+        if (icon) icon.textContent = "−";
+      }
+
+      items.forEach(function (item) {
+        var trigger = item.querySelector(".faq-item__trigger");
+        if (!trigger) return;
+
+        trigger.addEventListener("click", function () {
+          var isOpen = item.classList.contains("faq-item--open");
+
+          items.forEach(closeItem);
+
+          if (!isOpen) {
+            openItem(item);
+          }
+        });
+      });
+    })();
+
+    (function () {
+      var stepsContainer = document.querySelector(".steps-container");
+      if (!stepsContainer) return;
+
+      var stepCards = stepsContainer.querySelectorAll(".step-1");
+      if (!stepCards.length) return;
+
+      function revealSteps() {
+        stepsContainer.classList.add("is-steps-revealed");
+      }
+
+      if (!("IntersectionObserver" in window)) {
+        revealSteps();
+        return;
+      }
+
+      var stepsObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            revealSteps();
+            stepsObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      stepsObserver.observe(stepsContainer);
+    })();
+
+    (function () {
+      var sectionSelectors = [
+        ".frame-container",
+        ".benefit-visuals-block",
+        ".your-success-is",
+        ".home-child",
+        ".frame-section",
+        ".home-inner2",
+        ".partnering-benefits",
+        ".testimonial",
+        ".mission-features",
+        ".partner-voices",
+        ".home-inner3",
+        ".section-132",
+        ".home-inner4",
+        ".blog-content-parent",
+      ];
+
+      var textSelectors = [
+        "h1",
+        ".benefits-heading h2",
+        ".partner-voices__header",
+        ".partners-section__title",
+        ".questions-answers",
+        ".dont-find-the-container",
+        ".your-success-is",
+        ".why-you-should10",
+        ".anyone-with-good",
+        ".blog-intro h2",
+        ".testimonial-header h1",
+      ].join(", ");
+
+      var sections = sectionSelectors
+        .map(function (selector) {
+          return document.querySelector(selector);
+        })
+        .filter(Boolean);
+
+      if (!sections.length) return;
+
+      sections.forEach(function (section, index) {
+        section.classList.add(
+          "section-reveal",
+          index % 2 === 0 ? "from-down" : "from-up"
+        );
+
+        var targets = section.querySelectorAll(textSelectors);
+        targets.forEach(function (target, targetIndex) {
+          target.classList.add("section-reveal-target");
+          target.style.transitionDelay = targetIndex * 0.08 + "s";
+        });
+      });
+
+      if (!("IntersectionObserver" in window)) {
+        sections.forEach(function (section) {
+          section.classList.add("is-visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+  <script src="./path-icon.js?v=3"></script>
+  <script src="./auth-hero.js"></script>
+</body>
+
+</html>

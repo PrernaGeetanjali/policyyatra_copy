@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: "Satoshi", Arial, Helvetica, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+.py-auth-card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 36, 88, 0.16);
+}
+
+.py-auth-card__header {
+  padding: 14px 18px 12px;
+  background: linear-gradient(180deg, #d9ebff 0%, #eef6ff 100%);
+  border-bottom: 1px solid rgba(0, 73, 169, 0.08);
+}
+
+.py-auth-card__title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #003b88;
+}
+
+.py-auth-card__subtitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: rgba(0, 59, 136, 0.65);
+}
+
+.py-auth-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px 16px;
+}
+
+.py-auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 3px;
+  border-radius: 10px;
+  background: #f0f5fc;
+}
+
+.py-auth-tab {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 6px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #003b88;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.py-auth-tab.is-active {
+  color: #fff;
+  background: #003b88;
+  box-shadow: 0 3px 8px rgba(0, 59, 136, 0.22);
+}
+
+.py-auth-tab:not(.is-active):hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.py-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.py-auth-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #1a1a1a;
+}
+
+.py-auth-input {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #222;
+  background: #edf4fc;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.py-auth-input::placeholder {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.py-auth-input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 73, 169, 0.25);
+}
+
+.py-auth-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -2px;
+}
+
+.py-auth-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1d66c6;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.py-auth-link:hover {
+  color: #003b88;
+}
+
+.py-auth-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 2px;
+  padding: 6px 6px 6px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #003b88;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.py-auth-submit:hover {
+  background: #002e6b;
+}
+
+.py-auth-submit__text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.py-auth-submit--green {
+  background: #4eab00;
+}
+
+.py-auth-submit--green:hover {
+  background: #459900;
+}
+
+.py-auth-submit__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.py-auth-submit__arrow img {
+  width: 14px;
+  height: 9px;
+  display: block;
+}
+
+.py-auth-footer {
+  margin: 2px 0 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.py-auth-footer .py-auth-link {
+  font-size: inherit;
+}
+
+@media screen and (max-width: 480px) {
+  .py-auth-card {
+    max-width: 340px;
+    border-radius: 16px;
+  }
+
+  .py-auth-card__title {
+    font-size: 20px;
+  }
+
+  .py-auth-input {
+    font-size: 16px;
+  }
+}

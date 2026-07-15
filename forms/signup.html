@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signup — Policy Yatra</title>
+    <link rel="stylesheet" href="./auth-forms.css" />
+  </head>
+  <body>
+    <div class="py-auth-card" data-auth-form="signup">
+      <div class="py-auth-card__header">
+        <h1 class="py-auth-card__title">Signup</h1>
+        <p class="py-auth-card__subtitle">Welcome! on board with us</p>
+      </div>
+      <form class="py-auth-card__body">
+        <div class="py-auth-field">
+          <label class="py-auth-label" for="signup-name">Full Name*</label>
+          <input
+            class="py-auth-input"
+            id="signup-name"
+            type="text"
+            placeholder="Enter Full Name"
+            autocomplete="name"
+          />
+        </div>
+        <div class="py-auth-field">
+          <label class="py-auth-label" for="signup-mobile">Mobile Number*</label>
+          <input
+            class="py-auth-input"
+            id="signup-mobile"
+            type="tel"
+            inputmode="numeric"
+            placeholder="Enter Mobile Number"
+            autocomplete="tel"
+          />
+        </div>
+        <div class="py-auth-field">
+          <label class="py-auth-label" for="signup-email">Email Address*</label>
+          <input
+            class="py-auth-input"
+            id="signup-email"
+            type="email"
+            placeholder="Enter Email Address"
+            autocomplete="email"
+          />
+        </div>
+        <div class="py-auth-field">
+          <label class="py-auth-label" for="signup-password">Password*</label>
+          <input
+            class="py-auth-input"
+            id="signup-password"
+            type="password"
+            placeholder="Create Password"
+            autocomplete="new-password"
+          />
+        </div>
+        <button class="py-auth-submit py-auth-submit--green" type="submit">
+          <span class="py-auth-submit__text">SIGNUP</span>
+          <span class="py-auth-submit__arrow">
+            <img src="../public/CTA1.svg" alt="" />
+          </span>
+        </button>
+        <p class="py-auth-footer">
+          Already have an account?
+          <button class="py-auth-link" type="button" data-auth-show="login-otp">
+            Login now
+          </button>
+        </p>
+      </form>
+    </div>
+    <script src="./form-nav.js"></script>
+  </body>
+</html>
